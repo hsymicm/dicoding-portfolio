@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/button.css">
+    <title>Fadil Hisyam - Portfolio</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container nav-li">
+                <h2 class="logo" onclick="scrollToTop();">HsymIcm.</h2>
+                <ul>
+                    <li onclick="scrollToTop();">Home</li>
+                    <li onclick="scrollToTarget('about');">About</li>
+                    <li onclick="scrollToTarget('my-work');">My Work</li>
+                </ul>
+            </div>
+        </nav>
+        <div id="home" class="jumbotron">
+            <div class="title container">
+                <h1>Hello, I am <span class="text-highlight">Fadil Hisyam.</span></h1>
+                <div class="h-spacer"></div>
+                <p>Student at Gunadarma University, currently focusing on <br>UI/UX and Illustration.</p>
+                <div class="button">
+                    <button class="secondary btn" onclick="window.open('https://github.com/hsymicm','_blank')">Github</button>
+                    <button class="primary btn" onclick="scrollToTarget('my-work');">My Work</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div id="content">
+            <article id="about" class="card">
+                <h2>About <span class="text-highlight">Me.</span></h2>
+                <div class="h-spacer"></div>
+                <p>
+                    Hi, my name is Muhammad Fadil Hisyam. I'm a student in the department of Informatics Engineering at Gunadarma University. I'm a self-tought 3D Illustrator and currently focusing on UI/UX and Frontend.
+                    <br>
+                    I always love sharing my work with the world, i've found the feedback and comments i received to be very helpful in shaping my work. I hope you enjoy browsing my latest projects.
+                </p>
+            </article>
+            <article id="my-work" class="card">
+                <h2>My <span class="text-highlight">Work.</span></h2>
+                <div class="h-spacer"></div>
+                <section class="card">
+                    <h2><span class="text-highlight">Illustration.</span></h2>  
+                    <div class="">
+                        <img id="showcase">
+                        <h3 id="showcase-title"></h3>
+                        <p id="showcase-desc"></p>
+                    </div>
+                    <div class="button">
+                        <button id="showcase-btn" class="secondary btn prev">Prev</button>
+                        <button id="showcase-btn" class="secondary btn next">Next</button>
+                    </div>
+                </section>
+                <section class="card">
+                    <h2><span class="text-highlight">Coding Journey.</span></h2>  
+                    <div class="content">
+                        <img src="./assets/imgs/coding_journey/Gameplay2.png" alt="">
+                        <h3>Higher Lower - Anime Version</h3>
+                        <p>
+                            This is my summer project, web application made with Vue.js and TailwindCSS. Guessing game where the player guess which anime show is more popular. It features TOP 500+ anime titles from Anilist to be compared and guessed.
+                            <br><br>
+                            Link: 
+                            <a href="https://hsymicm.github.io/higher-lower-anime/" target="_blank">
+                                <span class="text-highlight">Website</span>
+                            </a>, 
+                            <a href="https://github.com/hsymicm/higherlower">
+                                <span class="text-highlight">Github</span>
+                            </a>
+                        </p>    
+                    </div>
+                    <div class="">
+                        <img src="./assets/imgs/coding_journey/bot.jpg" alt="">
+                        <h3>Ichor Bot</h3>
+                        <p>Discord bot project for a private server using Discord.py API and Python. This bot has a lot of features including Music Player, Search Anime/Manga, Genshin Wiki, Genshin Wish Simulator, and many more.</p>    
+                    </div>
+                </section>
+            </article>
+        </div>
+        <aside class="card">
+            <img class="profile" src="./assets/imgs/profile.jpg">
+            <h3><span class="text-highlight">Muhammad Fadil Hisyam</span></h3>
+            <table>
+                <tr>
+                    <td class="bold">Location</td>
+                    <td>Jakarta, Indonesia</td>
+                </tr>
+                <tr>
+                    <td class="bold">Birth</td>
+                    <td>15/03/2002</td>
+                </tr>
+                <tr>
+                    <td class="bold">Age</td>
+                    <td>20</td>
+                </tr>
+            </table>
+        </aside>
+    </main>
+    <footer class="container">
+        <h3>
+            <span class="text-highlight">HsymIcm.</span>
+        </h3>
+        <div class="v-spacer"></div>
+        <ul class="footer-flex link">
+            <li onclick="scrollToTop();">Home</li>
+            <li onclick="scrollToTarget('about');">About</li>
+            <li onclick="scrollToTarget('my-work');">My Work</li>
+        </ul>
+        <div class="footer-flex media">
+            <a href="https://www.instagram.com/hsym_icm/" target="_blank"><img src="./assets/svgs/square-instagram.svg" alt="Instagram"></a>
+            <a href="https://www.youtube.com/c/ichor" target="_blank"><img src="./assets/svgs/square-youtube.svg" alt="Youtube"></a>
+            <a href="https://github.com/hsymicm" target="_blank"><img src="./assets/svgs/square-github.svg" alt="Github"></a>
+        </div>
+    </footer>
+    <script src="./assets/index.js"></script>
+</body>
+</html>
