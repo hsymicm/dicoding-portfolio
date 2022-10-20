@@ -327,4 +327,17 @@ nav ul li:active {
     section .button button {
         margin: 8px;
     }
+
+    main {
+        top: 0;
+        margin-bottom: 36px;
+    }
+
+    .jumbotron {
+        min-height: 100vh;
+    }
+
+    .card {
+        padding: 10px 16px;
+    }
 }
