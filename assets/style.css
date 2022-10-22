@@ -333,6 +333,9 @@ nav ul li:active {
         margin-bottom: 36px;
     }
 
+    nav {
+        height: 56px;
+    }
     .jumbotron {
         min-height: 100vh;
     }
