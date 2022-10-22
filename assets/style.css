@@ -11,8 +11,8 @@ body {
 }
 
 .container {
-    padding-right: 16%;
-	padding-left: 16%;
+    padding-right: 24%;
+	padding-left: 24%;
 }
 
 
@@ -75,7 +75,7 @@ a {
 
 aside {
     flex-basis: 25%;
-    max-width: 300px;
+    min-width: 300px;
     margin-left: 24px;
     height: 440px;
 }
@@ -215,6 +215,9 @@ nav ul li:active {
 
 .jumbotron {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 30%, black),url('./imgs/jumbotron.jpg ');
     background-size: cover;
     background-position: top;
@@ -223,11 +226,9 @@ nav ul li:active {
 }
 
 .jumbotron .title {
-    position: absolute;
     display: flex;
     flex-direction: column;
     color: white;
-    margin: 26vh 0;
     width: 100%;
 }
 
@@ -255,12 +256,18 @@ nav ul li:active {
     width: 1px;
 }
 
+@media screen and (max-width: 2100px){
+    .container {
+        padding-left: 16%;
+        padding-right: 16%;
+    }
+}
 
 /* Container for smaller desktop */
 @media screen and (max-width: 1280px){
     .container {
         padding-right: 4%;
-	    padding-left: 4%;
+        padding-left: 4%;
     }
 }
 
@@ -322,10 +329,10 @@ nav ul li:active {
 
 @media screen and (max-width: 513px) {
     section .button {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     section .button button {
-        margin: 8px;
+        margin: 8px 16px;
     }
 
     main {
