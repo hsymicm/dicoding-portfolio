@@ -1,12 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+
+:root {
+    --color: #ffd47d;
+}
 
 * {
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 body {
-    background-color: black;
+    background-color: white;
     margin: 0;
 }
 
@@ -15,25 +19,34 @@ body {
 	padding-left: 24%;
 }
 
-
 main {
     position: relative;
     display: flex;
     flex-direction: row;
-    top: -10vh;
+    top: -12vh;
 }
 
 .card {
-    background-color: black;
+    background-color: white;
     padding: 24px 36px;
-    border-radius: 15px;
-    color: white;
-    box-shadow: 0px 8px 16px rgba(36,36,36,0.5);
-    border: 1.5px rgba(255,255,255,0.25) solid;
+    border-radius: 4px;
+    color: black;
+    /* box-shadow: 6px 6px var(--color);
+    transform: translate(-6px, -6px); */
+    /* box-shadow: 0px 8px 16px rgba(36,36,36,0.5); */
+    border: 2px solid black
 }
 
-article {
+article:not(:last-child) {
     margin-bottom: 32px;
+}
+
+article h2 {
+    margin: -24px -36px 36px -36px;
+    padding: 24px 36px;
+    background-color: var(--color);
+    border-bottom: 2px solid black;
+    border-radius: 2px 2px 0 0;
 }
 
 section {
@@ -42,26 +55,31 @@ section {
     margin-bottom: 16px;
 }
 
-section .content {
+section h3 {
+    margin-top: 24px;
+}
+
+article .content:not(:last-child) {
     margin-bottom: 64px;
 }
 
-section .button {
+article .button, section .button {
     display: flex;
     flex-direction: row;
     margin-top: 36px;
     margin-bottom: 16px;
-    max-width: 280px;
-    justify-content: space-between;
+    gap: 12px;
 }
 
-section img{
+article img, section img{
     /* aspect-ratio: 3/2; */
     max-height: 500px;
     max-width: 100%;
     object-fit: cover;
     object-position: center;
-    border-radius: 15px;
+    border-radius: 4px;
+    border: 2px solid black;
+    box-shadow: 6px 6px 0px black;
 }
 
 a {
@@ -73,14 +91,20 @@ a {
     flex-basis: 75%;
 }
 
-aside {
+#aside {
     flex-basis: 25%;
-    min-width: 300px;
     margin-left: 24px;
-    height: 440px;
 }
 
-aside h3, aside p {
+aside {
+    overflow-wrap: break-word;
+}
+
+aside:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+aside h3, aside table p {
     text-align: center;
 }
 
@@ -98,21 +122,99 @@ aside .bold {
     font-weight: bold;
 }
 
+.list {
+    margin-bottom: 32px;
+}
+
+.list:last-child {
+    margin-bottom: 16px;
+}
+
+.list-title {
+    font-weight: bold;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+}
+
+.list-item:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+.list-item p {
+    margin: 0;
+}
+
+.list-item .number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
+    border-radius: 99px;
+    font-weight: bold;
+    margin-right: 16px;
+    background: 
+        linear-gradient(black, black) padding-box,
+        linear-gradient(to right,  #05b0f4, #01fa86) border-box;
+    box-shadow: 0px 10px 20px #03d4bf33;
+    border: 2px solid transparent;
+}
+
+.experience {
+    display: flex;
+    align-items: center;
+}
+
+.experience img {
+    margin-right: 32px;
+    border: 2px solid black;
+    box-shadow: 6px 6px 0px black;
+    width: 84px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+}
+
+.experience .detail h3 {
+    margin: 0;
+    margin-bottom: 4px;
+}
+
 .profile {
+    border: 2px solid black;
+    box-shadow: 6px 6px 0px black;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
     display: block;
     margin: 0 auto;
     margin-top: 16px;
     margin-bottom: 32px;
-    padding: 4px;
-    background: 
-        linear-gradient(black, black) padding-box,
-        linear-gradient(to right,  #05b0f4, #01fa86) border-box;
-    border: 2px solid transparent;
-    box-shadow: 0px 10px 20px #03d4bf33;
-    width: 120px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 150px;
+    width: 80%;
+}
+
+.show-more {
+    box-sizing: content-box;
+    margin: -24px -36px;
+    padding: 24px 36px;
+    width: 100%;
+    border: none;
+    border-top: 2px solid black;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all ease 0.15s;
+    color: black;
+    background-color: white;
+    border-radius: 2px 0;
+}
+
+.show-more:hover {
+    background-color: #ffd47d;
 }
 
 footer {
@@ -161,25 +263,41 @@ footer {
 }
 
 .logo {
+    margin: 0;
+    display: flex;
+    align-items: center;
     cursor: pointer;
-    transition: 0.6s;
+    padding: 0 32px;
+    height: 100%;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: all 0.15s ease;
 }
 
 .logo:hover {
-    background: linear-gradient(45deg, #05b0f4, #01fa86);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-color: var(--color);
+    border: 2px solid black;
+    transform: translateY(8px);
+}
+
+.logo:active {
+    transform: scale(0.95);
+}
+
+.main-title {
+    font-size: 6rem;
+    margin: 0;
+    margin-left: -8px;
+    margin-bottom: 8px;
 }
 
 nav {
-    background-color: rgba(0,0,0,0.5);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px rgba(255,255,255,0.25) solid;
+    background-color: white;
+    border-bottom: 2px black solid;
     position: fixed;
     height: 75px;
     width: 100%;
-    color: white;
+    color: black;
     z-index: 999;
 }
 
@@ -200,13 +318,21 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 64px;
+    /* margin-left: 64px; */
+    box-sizing: content-box;
+    margin-right: -2px;
+    padding: 24px;
     cursor: pointer;
-    transition: 0.15s ease-out;
+    transition: 0.15s ease;
+    border: 2px solid transparent;
+    border-radius: 4px;
 }
 
 nav ul li:hover {
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
+    background-color: var(--color);
+    border: 2px solid black;
+    transform: translateY(6px);
 }
 
 nav ul li:active {
@@ -218,11 +344,14 @@ nav ul li:active {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 30%, black),url('./imgs/jumbotron.jpg ');
+    background: linear-gradient(90deg,
+        rgba(20,16,14,0.6), transparent, transparent),
+        url('./imgs/jumbotron1.jpg ');
     background-size: cover;
     background-position: top;
     width: 100%;
     min-height: 90vh;
+    border-bottom: 2px solid black;
 }
 
 .jumbotron .title {
@@ -234,20 +363,21 @@ nav ul li:active {
 
 .jumbotron button {
     margin-top: 48px;
+    margin-bottom: 36px;
     margin-right: 16px;
 }
 
 .text-highlight {
-    background: linear-gradient(45deg, #05b0f4, #01fa86);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: white;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 6px 6px 0px var(--color);
 }   
 
 .h-spacer {
-    background-color: white;
+    background-color: black;
     width: 80px;
-    height: 1px;
+    height: 2px;
+    border-radius: 2px;
 }
 
 .v-spacer {
