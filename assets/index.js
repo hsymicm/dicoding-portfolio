@@ -46,9 +46,9 @@ const projectData = [
         ]
     },
     {
-        img : pathProject + 'aniwatch.png',
+        img : pathProject + 'aniwatch.jpg',
         title : 'Aniwatch - Anime Platform',
-        desc : "This is the final project of web programming class that me and my friend made with React.js and Anilist API. You can discover, organize, and track your favorite anime shows here.",
+        desc : "This is the final project of web programming class that me and my colleagues made with React.js and Anilist API. You can discover, organize, and track your favorite anime shows here.",
         btn : [
             {
                 label : 'Repo',
@@ -152,7 +152,17 @@ projectData.forEach(({img, title, desc, btn}) => {
     setProjectData(img, title, desc, btn);
 });
 
+const checkbox = document.getElementById("menu-hamburger");
+const menu = document.getElementById("menu");
+checkbox.addEventListener("change", (e) => {
+    menu.style.marginRight = e.target.checked ? "0" : "-50vw";
+});
+
 const scrollToTarget = (element) => {
+    if(checkbox.checked) {
+        menu.style.marginRight = "-50vw";
+        checkbox.checked = false;
+    }
     var element = document.getElementById(element);
     var nav = document.querySelector('.nav-li');
     var headerOffset = nav.getBoundingClientRect().bottom + 25;
@@ -162,5 +172,9 @@ const scrollToTarget = (element) => {
 }
 
 const scrollToTop = () => {
+    if(checkbox.checked) {
+        menu.style.marginRight = "-50vw";
+        checkbox.checked = false;
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }

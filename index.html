@@ -12,7 +12,7 @@
     <header>
         <nav>
             <div class="container nav-li">
-                <h2 class="logo" onclick="scrollToTop();">HsymIcm</h2>
+                <h2 class="logo logo-ani" onclick="scrollToTop();">HsymIcm</h2>
                 <ul>
                     <li onclick="scrollToTop();">Home</li>
                     <li onclick="scrollToTarget('about');">About</li>
@@ -20,8 +20,23 @@
                     <li onclick="scrollToTarget('my-work');">Project</li>
                     <li onclick="scrollToTarget('experiences');">Experience</li>
                 </ul>
+                <input id="menu-hamburger" class="input-box" type="checkbox" style="display: none;">
+                <label for="menu-hamburger" class="hamburger-btn">
+                    <span class="hamburger">
+                        <span class="icon-bar top-bar"></span>
+                        <span class="icon-bar middle-bar"></span>
+                        <span class="icon-bar bottom-bar"></span>
+                    </span>
+                </label>
             </div>
         </nav>
+        <ul style="margin-right: -50vw;" id="menu" class="menu">
+            <li onclick="scrollToTop();">Home</li>
+            <li onclick="scrollToTarget('about');">About</li>
+            <li onclick="scrollToTarget('illustrations')">Illustration</li>
+            <li onclick="scrollToTarget('my-work');">Project</li>
+            <li onclick="scrollToTarget('experiences');">Experience</li>
+        </ul>
         <div id="home" class="jumbotron container">
             <div class="title">
                 <h1 class="main-title text-highlight">Portfolio.</h1>
@@ -118,6 +133,7 @@
         <ul class="footer-flex link">
             <li onclick="scrollToTop();">Home</li>
             <li onclick="scrollToTarget('about');">About</li>
+            <li onclick="scrollToTarget('illustrations')">Illustration</li>
             <li onclick="scrollToTarget('my-work');">Project</li>
             <li onclick="scrollToTarget('experiences');">Experience</li>
         </ul>
