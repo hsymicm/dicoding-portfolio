@@ -12,19 +12,35 @@
     <header>
         <nav>
             <div class="container nav-li">
-                <h2 class="logo" onclick="scrollToTop();">HsymIcm.</h2>
+                <h2 class="logo logo-ani" onclick="scrollToTop();">HsymIcm</h2>
                 <ul>
                     <li onclick="scrollToTop();">Home</li>
                     <li onclick="scrollToTarget('about');">About</li>
-                    <li onclick="scrollToTarget('my-work');">My Work</li>
+                    <li onclick="scrollToTarget('illustrations')">Illustration</li>
+                    <li onclick="scrollToTarget('my-work');">Project</li>
+                    <li onclick="scrollToTarget('experiences');">Experience</li>
                 </ul>
+                <input id="menu-hamburger" class="input-box" type="checkbox" style="display: none;">
+                <label for="menu-hamburger" class="hamburger-btn">
+                    <span class="hamburger">
+                        <span class="icon-bar top-bar"></span>
+                        <span class="icon-bar middle-bar"></span>
+                        <span class="icon-bar bottom-bar"></span>
+                    </span>
+                </label>
             </div>
         </nav>
+        <ul style="margin-right: -50vw;" id="menu" class="menu">
+            <li onclick="scrollToTop();">Home</li>
+            <li onclick="scrollToTarget('about');">About</li>
+            <li onclick="scrollToTarget('illustrations')">Illustration</li>
+            <li onclick="scrollToTarget('my-work');">Project</li>
+            <li onclick="scrollToTarget('experiences');">Experience</li>
+        </ul>
         <div id="home" class="jumbotron container">
             <div class="title">
-                <h1>Hello, I am <span class="text-highlight">Fadil Hisyam.</span></h1>
-                <div class="h-spacer"></div>
-                <p>Student at Gunadarma University, currently focusing on <br>UI/UX and Illustration.</p>
+                <h1 class="main-title text-highlight">Portfolio.</h1>
+                <p>Hello, I'm Fadil Hisyam a student at Gunadarma University,<br> currently focusing on UI/UX, Frontend, and Illustration.</p>
                 <div class="button">
                     <button class="secondary btn" onclick="window.open('https://github.com/hsymicm','_blank')">Github</button>
                     <button class="primary btn" onclick="scrollToTarget('my-work');">My Work</button>
@@ -35,82 +51,93 @@
     <main class="container">
         <div id="content">
             <article id="about" class="card">
-                <h2>About <span class="text-highlight">Me.</span></h2>
-                <div class="h-spacer"></div>
+                <h2>About Me</h2>
+                <!-- <div class="h-spacer"></div> -->
                 <p>
                     Hi, my name is Muhammad Fadil Hisyam. I'm a student in the department of Informatics Engineering at Gunadarma University. I'm a self-tought 3D Illustrator and currently focusing on UI/UX and Frontend.
                     <br>
                     I always love sharing my work with the world, i've found the feedback and comments i received to be very helpful in shaping my work. I hope you enjoy browsing my latest projects.
                 </p>
             </article>
-            <article id="my-work" class="card">
-                <h2>My <span class="text-highlight">Work.</span></h2>
-                <div class="h-spacer"></div>
-                <section class="card">
-                    <h2><span class="text-highlight">Illustration.</span></h2>  
-                    <div class="">
-                        <img id="showcase">
-                        <h3 id="showcase-title"></h3>
-                        <p id="showcase-desc"></p>
-                    </div>
+            <article id="illustrations" class="card">
+                <h2>Illustration</span></h2>
+                <section>
+                    <img id="showcase">
+                    <h3 id="showcase-title"></h3>
+                    <p id="showcase-desc"></p>
                     <div class="button">
                         <button id="showcase-btn" class="secondary btn prev">Prev</button>
                         <button id="showcase-btn" class="secondary btn next">Next</button>
                     </div>
                 </section>
-                <section class="card">
-                    <h2><span class="text-highlight">Coding Journey.</span></h2>  
-                    <div class="content">
-                        <img src="./assets/imgs/coding_journey/Gameplay2.png" alt="">
-                        <h3>Higher Lower - Anime Version</h3>
-                        <p>
-                            This is my summer project, web application made with Vue.js and TailwindCSS. Guessing game where the player guess which anime show is more popular. It features TOP 500+ anime titles from Anilist to be compared and guessed.
-                            <br><br>
-                            Link: 
-                            <a href="https://hsymicm.github.io/higher-lower-anime/" target="_blank">
-                                <span class="text-highlight">Website</span>
-                            </a>, 
-                            <a href="https://github.com/hsymicm/higherlower">
-                                <span class="text-highlight">Github</span>
-                            </a>
-                        </p>    
+            </article>
+            <article id="my-work" class="card">
+                <h2>My Projects</span></h2>
+            </article>
+            <article id="experiences" class="card">
+                <h2>My Experiences</h2>
+                <section class="experience card">
+                    <img src="./assets//imgs/lepkom.jpeg" alt="">
+                    <div class="detail">
+                        <h3>Laboratory Assistant (2023 - Now)</h3>
+                        Gunadarma University Computerization Development Institute
                     </div>
-                    <div class="">
-                        <img src="./assets/imgs/coding_journey/bot.jpg" alt="">
-                        <h3>Ichor Bot</h3>
-                        <p>Discord bot project for a private server using Discord.py API and Python. This bot has a lot of features including Music Player, Search Anime/Manga, Genshin Wiki, Genshin Wish Simulator, and many more.</p>    
+                </section>
+                <section class="experience card">
+                    <img src="./assets//imgs/dicoding.jpeg" alt="">
+                    <div class="detail">
+                        <h3>Bootcamp Web Development (2022)</h3>
+                        Dicoding Indonesia
+                    </div>
+                </section>
+                <section class="experience card">
+                    <img src="./assets//imgs/dicoding.jpeg" alt="">
+                    <div class="detail">
+                        <h3>Bootcamp Javascript (2022)</h3>
+                        Dicoding Indonesia
+                    </div>
+                </section>
+                <section class="experience card">
+                    <img src="./assets//imgs/dicoding.jpeg" alt="">
+                    <div class="detail">
+                        <h3>Bootcamp Front-End Development (2022)</h3>
+                        Dicoding Indonesia
                     </div>
                 </section>
             </article>
         </div>
-        <aside class="card">
-            <img class="profile" src="./assets/imgs/profile.jpg">
-            <h3><span class="text-highlight">Muhammad Fadil Hisyam</span></h3>
-            <table>
-                <tr>
-                    <td class="bold">Location</td>
-                    <td>Jakarta, Indonesia</td>
-                </tr>
-                <tr>
-                    <td class="bold">Birth</td>
-                    <td>15/03/2002</td>
-                </tr>
-                <tr>
-                    <td class="bold">Age</td>
-                    <td>20</td>
-                </tr>
-            </table>
-        </aside>
+        <div id="aside">
+            <aside class="card">
+                <img class="profile" src="./assets/imgs/profile.jpg">
+                <div class="profile-details">
+                    <h2 style="margin-top: 0;">Muhammad Fadil Hisyam</h2>
+                    <table>
+                        <tr>
+                            <td class="bold">Location</td>
+                            <td>Pangkalan Jati V, Cipinang Melayu, Jakarta Timur.</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Email</td>
+                            <td>ichorvfx@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Number</td>
+                            <td>085718831989</td>
+                        </tr>
+                    </table>
+                </div>
+            </aside>
+        </div>
     </main>
     <footer class="container">
-        <h3>
-            <span class="text-highlight">HsymIcm.</span>
-        </h3>
+        <h3 style="color: white;">HsymIcm</h3>
         <div class="v-spacer"></div>
         <ul class="footer-flex link">
             <li onclick="scrollToTop();">Home</li>
             <li onclick="scrollToTarget('about');">About</li>
-            <li onclick="scrollToTarget('my-work');">My Work</li>
+            <li onclick="scrollToTarget('illustrations')">Illustration</li>
+            <li onclick="scrollToTarget('my-work');">Project</li>
+            <li onclick="scrollToTarget('experiences');">Experience</li>
         </ul>
         <div class="footer-flex media">
             <a href="https://www.instagram.com/hsym_icm/" target="_blank"><img src="./assets/svgs/square-instagram.svg" alt="Instagram"></a>

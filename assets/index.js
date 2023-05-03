@@ -1,4 +1,5 @@
-const path = './assets/imgs/illustration/'
+const path = './assets/imgs/illustration/';
+const pathProject = './assets/imgs/coding_journey/';
 const data = [
     {
         img : path + 'restaurant.jpg',
@@ -25,9 +26,95 @@ const data = [
         title : 'Destruction of Earth',
         desc : 'Before earth become desolated from the burning heat of the laser launched from an anomaly in the space. This illustration is made in Cinema4D with an Octane Renderer.',
     }
-]
+];
+const projectData = [
+    {
+        img : pathProject + 'higherlower.jpg',
+        title : 'Higher Lower - Anime Version',
+        desc : 'This is my summer project, web application made with Vue.js and TailwindCSS. Guessing game where the player guess which anime show is more popular. It features TOP 500+ anime titles from Anilist to be compared and guessed.',
+        btn : [
+            {
+                label : 'Repo',
+                link : 'https://github.com/hsymicm/higher-lower-anime',
+                primary : false,
+            },
+            {
+                label : 'Website',
+                link : 'https://hsymicm.github.io/higher-lower-anime',
+                primary : true,
+            }
+        ]
+    },
+    {
+        img : pathProject + 'aniwatch.jpg',
+        title : 'Aniwatch - Anime Platform',
+        desc : "This is the final project of web programming class that me and my colleagues made with React.js and Anilist API. You can discover, organize, and track your favorite anime shows here.",
+        btn : [
+            {
+                label : 'Repo',
+                link : 'https://github.com/hsymicm/aniwatch',
+                primary : false,
+            },
+            {
+                label : 'Website',
+                link : 'https://hsymicm.github.io/aniwatch',
+                primary : true,
+            }
+        ]
+    },
+    {
+        img : pathProject + 'bot.jpg',
+        title : 'Ichor Bot',
+        desc : "Discord bot project for a private server using Discord.py API and Python. This bot has a lot of features including Music Player, Search Anime/Manga, Genshin Wiki, Genshin Wish Simulator, and many more.",
+        btn : [
+            {
+                label : 'Repo',
+                link : 'https://github.com/hsymicm/ichor-bot',
+                primary : false,
+            },
+        ]
+    }
+];
 
 let curIndex = 0;
+const limit = 2;
+
+const setProjectData = (img, label, description, btn=[]) => {
+    const sections = document.createElement("section")
+    sections.classList += "content";
+
+    const cover = document.createElement("img");
+    cover.setAttribute("src", img);
+
+    const title = document.createElement("h3");
+    title.innerText = label;
+    
+    const desc = document.createElement("p");
+    desc.innerText = description;
+
+    const btnDiv = document.createElement("div");
+    btnDiv.classList += "button";
+
+    btn.forEach((o) => {
+        const btns = document.createElement("a");
+        btns.setAttribute(
+            "class",
+            `${o?.primary ? "primary" : "secondary"} btn`
+        );
+        btns.innerText = o.label;
+        btns.setAttribute("href", o.link);
+        btns.setAttribute("target", "_blank");
+        btnDiv.appendChild(btns);
+    })
+
+    sections.appendChild(cover);
+    sections.appendChild(title);
+    sections.appendChild(desc);
+    sections.appendChild(btnDiv);
+
+    const parent = document.getElementById('my-work')
+    parent.appendChild(sections);
+}
 
 const setData = (index) => {
     document.getElementById('showcase').src = data[index].img;
@@ -55,13 +142,27 @@ const Btn = document.querySelectorAll('#showcase-btn');
 
 Btn.forEach((element) => {
     element.addEventListener('click', (event) => {
-        handleClick(event.target.classList.contains('next'))
+        handleClick(event.target.classList.contains('next'));
     })
 })
 
 setData(curIndex);
 
+projectData.forEach(({img, title, desc, btn}) => {
+    setProjectData(img, title, desc, btn);
+});
+
+const checkbox = document.getElementById("menu-hamburger");
+const menu = document.getElementById("menu");
+checkbox.addEventListener("change", (e) => {
+    menu.style.marginRight = e.target.checked ? "0" : "-50vw";
+});
+
 const scrollToTarget = (element) => {
+    if(checkbox.checked) {
+        menu.style.marginRight = "-50vw";
+        checkbox.checked = false;
+    }
     var element = document.getElementById(element);
     var nav = document.querySelector('.nav-li');
     var headerOffset = nav.getBoundingClientRect().bottom + 25;
@@ -71,5 +172,9 @@ const scrollToTarget = (element) => {
 }
 
 const scrollToTop = () => {
+    if(checkbox.checked) {
+        menu.style.marginRight = "-50vw";
+        checkbox.checked = false;
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
