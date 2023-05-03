@@ -66,7 +66,7 @@ article .button, section .button {
 }
 
 article img, section img{
-    /* aspect-ratio: 3/2; */
+    aspect-ratio: 1/1;
     max-height: 500px;
     max-width: 100%;
     object-fit: cover;
@@ -92,9 +92,15 @@ a {
 aside {
     margin-left: 24px;
     overflow-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: 36px;
+    row-gap: 16px;
 }
 
-aside h3, aside table p {
+aside h2, aside table p {
     text-align: center;
 }
 
@@ -143,11 +149,13 @@ aside .bold {
     object-position: center;
     border-radius: 4px;
     display: block;
-    margin: 0 auto;
-    margin-top: 16px;
-    margin-bottom: 32px;
-    width: 80%;
-    max-width: 320px;
+    margin: 16px 0;
+    width: 224px;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
 }
 
 footer {
@@ -428,18 +436,24 @@ nav .nav-li {
 
 @media screen and (max-width: 960px) {
     main {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     aside {
         margin-left: 0;
-        margin-top: 36px;
+        margin-bottom: 32px;
         max-width: 100%;
         height: auto;
+        flex-direction: row;
+        align-items: center;
     }
     footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .profile {
+        min-width: 144px;
     }
 
     .link li {
@@ -479,15 +493,14 @@ nav .nav-li {
 @media screen and (max-width: 513px) {
     aside {
         margin-top: 5vw;
+        flex-direction: column;
+
     }
+
     article h2 {
         margin: -16px;
         margin-bottom: 16px;
         padding: 16px 16px;
-    }
-    
-    article:first-child {
-        margin-top: 5vw;
     }
 
     .experience {
